@@ -14,3 +14,21 @@ public class Member {
     public String getNama() { return nama; }
     public String getNoTelepon() { return noTelepon; }
     public String getTanggalDaftar() { return tanggalDaftar; }
+
+ }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public String getNoTelepon() {
+        return noTelepon;
+    }
+
+    public String getTanggalDaftar() {
+        return tanggalDaftar;
+    }
+
+    public String getJenisPaket() {
+        return jenisPaket;
+    }
