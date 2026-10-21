@@ -11,12 +11,6 @@ public class Member {
 
 }
 
-    public String getNama() { return nama; }
-    public String getNoTelepon() { return noTelepon; }
-    public String getTanggalDaftar() { return tanggalDaftar; }
-
- }
-
     public String getNama() {
         return nama;
     }
@@ -32,3 +26,8 @@ public class Member {
     public String getJenisPaket() {
         return jenisPaket;
     }
+
+    public void tampilkanJenisPaket() {
+        System.out.println("Jenis Paket: " + jenisPaket);
+    }
+}
