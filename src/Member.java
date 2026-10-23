@@ -1,3 +1,7 @@
+/**
+ * Merepresentasikan data satu member gym FitTrack.
+ * Menyimpan identitas dan jenis paket keanggotaan member.
+ */
 public class Member {
 
     private String nama;
@@ -5,6 +9,23 @@ public class Member {
     private String tanggalDaftar;
     private String jenisPaket;
 
+    // Constructor dengan empat parameter
+    public Member(String nama, String noTelepon,
+                  String tanggalDaftar, String jenisPaket) {
+        setNama(nama);
+        setNoTelepon(noTelepon);
+        setTanggalDaftar(tanggalDaftar);
+        setJenisPaket(jenisPaket);
+    }
+
+    // Constructor dengan tiga parameter
+    // Jenis paket secara default adalah Basic
+    public Member(String nama, String noTelepon,
+                  String tanggalDaftar) {
+        this(nama, noTelepon, tanggalDaftar, "Basic");
+    }
+
+    // Getter untuk mengambil nilai atribut
     public String getNama() {
         return nama;
     }
@@ -21,7 +42,14 @@ public class Member {
         return jenisPaket;
     }
 
-    public void tampilkanJenisPaket() {
-        System.out.println("Jenis Paket: " + jenisPaket);
+    // Setter nama dengan validasi
+    public void setNama(String nama) {
+        if (nama != null && !nama.trim().isEmpty()) {
+            this.nama = nama;
+        } else {
+            System.out.println("Nama tidak boleh kosong.");
+            if (this.nama == null) {
+                this.nama = "Tidak diketahui";
+            }
+        }
     }
-}
