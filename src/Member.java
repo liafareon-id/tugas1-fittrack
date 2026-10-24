@@ -53,3 +53,18 @@ public class Member {
             }
         }
     }
+
+// Setter nomor telepon dengan validasi
+    public void setNoTelepon(String noTelepon) {
+        if (noTelepon != null
+                && noTelepon.matches("0\\d{9,}")) {
+            this.noTelepon = noTelepon;
+        } else {
+            System.out.println(
+                "Nomor telepon harus diawali 0 dan minimal 10 digit."
+            );
+            if (this.noTelepon == null) {
+                this.noTelepon = "0000000000";
+            }
+        }
+    }
