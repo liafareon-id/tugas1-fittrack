@@ -68,3 +68,16 @@ public class Member {
             }
         }
     }
+
+// Setter tanggal daftar
+    public void setTanggalDaftar(String tanggalDaftar) {
+        if (tanggalDaftar != null
+                && !tanggalDaftar.trim().isEmpty()) {
+            this.tanggalDaftar = tanggalDaftar;
+        } else {
+            System.out.println("Tanggal daftar tidak boleh kosong.");
+            if (this.tanggalDaftar == null) {
+                this.tanggalDaftar = "Belum ditentukan";
+            }
+        }
+    }
