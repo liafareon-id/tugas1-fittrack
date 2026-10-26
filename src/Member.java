@@ -81,3 +81,19 @@ public class Member {
             }
         }
     }
+
+// Setter jenis paket dengan validasi
+    public void setJenisPaket(String jenisPaket) {
+        if ("Basic".equals(jenisPaket)
+                || "Premium".equals(jenisPaket)
+                || "VIP".equals(jenisPaket)) {
+            this.jenisPaket = jenisPaket;
+        } else {
+            System.out.println(
+                "Jenis paket harus Basic, Premium, atau VIP."
+            );
+            if (this.jenisPaket == null) {
+                this.jenisPaket = "Basic";
+            }
+        }
+    }
