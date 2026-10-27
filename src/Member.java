@@ -97,3 +97,20 @@ public class Member {
             }
         }
     }
+
+// Menampilkan jenis paket
+    public void tampilkanJenisPaket() {
+        System.out.println("Jenis Paket: " + jenisPaket);
+    }
+
+    // Mengubah objek menjadi teks
+    @Override
+    public String toString() {
+        return "Member{" +
+                "nama='" + nama + '\'' +
+                ", noTelepon='" + noTelepon + '\'' +
+                ", tanggalDaftar='" + tanggalDaftar + '\'' +
+                ", jenisPaket='" + jenisPaket + '\'' +
+                '}';
+    }
+}
