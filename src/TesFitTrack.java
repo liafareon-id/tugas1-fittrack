@@ -2,6 +2,10 @@
  * Class utama untuk menjalankan dan menguji sistem keanggotaan FitTrack.
  */
 public class TesFitTrack {
+    /**
+     * Method utama untuk menjalankan skenario uji sistem keanggotaan.
+     * @param args argumen command line
+     */
     public static void main(String[] args) {
         // 1. Membuat array Member berisi minimal 4 objek
         Member[] daftarMember = new Member[4];
