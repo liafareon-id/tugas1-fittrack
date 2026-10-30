@@ -8,7 +8,8 @@ public class Member {
     private String noTelepon;
     private String tanggalDaftar;
     private String jenisPaket;
-
+    private static final int MIN_PANJANG_TELP = 10;
+    
     // Constructor dengan empat parameter
     public Member(String nama, String noTelepon,
                   String tanggalDaftar, String jenisPaket) {
