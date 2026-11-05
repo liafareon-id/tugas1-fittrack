@@ -12,44 +12,37 @@
 
 ## Deskripsi Singkat
 
-FitTrack adalah program pendataan member gym berbasis Java.
-Program ini membantu menyimpan nama, nomor telepon, tanggal
-pendaftaran, dan jenis paket keanggotaan agar data member
-dapat ditampilkan dengan lebih teratur.
+FitTrack adalah program pendataan member gym berbasis Java yang dirancang untuk membantu digitalisasi operasional pencatatan keanggotaan. Program ini menyimpan data nama lengkap, nomor telepon aktif, tanggal pendaftaran, dan paket keanggotaan agar terhindar dari kendala data tercecer atau tulisan tangan yang sulit dibaca.
 
-Program juga menerapkan validasi agar data yang tidak sesuai
-aturan tidak menggantikan data yang sudah valid.
+Program menerapkan enkapsulasi dan pemusatan validasi di setter untuk memastikan setiap masukan data memenuhi kriteria yang ditentukan dan tidak menimpa nilai yang sudah valid jika terjadi kesalahan input.
 
 ## Fitur Utama
 
-- Menyimpan data nama, nomor telepon, tanggal daftar,
-  dan paket member.
+- Menyimpan data member gym (nama, nomor telepon, tanggal daftar, dan jenis paket).
 - Memeriksa nama agar tidak kosong atau hanya berisi spasi.
-- Memeriksa nomor telepon agar diawali angka 0,
-  hanya berisi angka, dan memiliki minimal 10 digit.
-- Membatasi jenis paket pada Basic, Premium, atau VIP.
-- Menyediakan paket Basic secara otomatis melalui
-  constructor tiga parameter.
-- Menolak data tidak valid tanpa mengganti data lama.
-- Menampilkan beberapa member yang disimpan dalam array.
+- Memeriksa nomor telepon agar wajib diawali angka 0, hanya berisi digit numerik, dan memiliki minimal 10 digit.
+- Membatasi jenis paket hanya pada pilihan Basic, Premium, atau VIP.
+- Menyediakan constructor overloading yang otomatis mengisi paket default Basic jika paket tidak disertakan.
+- Menolak input tidak valid di method setter tanpa merusak atau mengubah data lama.
+- Menampilkan daftar seluruh member gym yang disimpan dalam array secara rapi dan berlabel.
 
 ## Konsep OOP yang Diterapkan
 
 | Konsep | Lokasi Penerapan | Alasan |
 |---|---|---|
-| Class dan Object | Member.java dan TesFitTrack.java | Member menjadi cetak biru data member, sedangkan objek mewakili setiap anggota gym. |
-| Encapsulation | Atribut private pada Member.java | Melindungi atribut agar tidak diakses langsung dari luar class. |
-| Constructor | Constructor pada Member.java | Mengisi atribut ketika objek dibuat. |
-| Constructor Overloading | Constructor 4 parameter dan 3 parameter | Member dapat dibuat dengan paket yang ditentukan atau paket default Basic. |
-| This | Constructor pada Member.java | Memanggil constructor lengkap dari constructor tiga parameter. |
-| Array dan For | TesFitTrack.java | Menyimpan dan menampilkan beberapa objek Member. |
-| toString() | Method toString() pada Member.java | Menampilkan data objek dalam bentuk teks yang jelas. |
-| If-Else | Seluruh setter pada Member.java | Menentukan apakah data memenuhi aturan validasi. |
+| Class dan Object | `Member.java` dan `TesFitTrack.java` | `Member` menjadi cetak biru entitas keanggotaan, sedangkan objek mewakili data nyata setiap member gym. |
+| Encapsulation | Atribut `private` dan method `getter`/`setter` di `Member.java` | Melindungi atribut dari modifikasi langsung di luar class dan memusatkan logika validasi di setter. |
+| Constructor | Constructor pada `Member.java` | Menginisialisasi nilai atribut awal objek dengan memanggil masing-masing setter. |
+| Constructor Overloading | Constructor 4 parameter dan 3 parameter di `Member.java` | Menyediakan fleksibilitas pembuatan member, baik dengan paket custom maupun paket default. |
+| Keyword this | Constructor 3 parameter di `Member.java` | Menerapkan constructor chaining (`this(...)`) menuju constructor lengkap untuk menghindari duplikasi kode (prinsip DRY). |
+| Method Overriding | Method `toString()` di `Member.java` | Mengganti representasi default alamat memori objek dari class `Object` dengan format teks berlabel yang informatif. |
+| Array of Objects | Variabel `daftarMember` di `TesFitTrack.java` | Menampung kumpulan referensi objek `Member` dalam satu struktur data berurutan. |
 
 ## Struktur Project
 
 ```text
 tugas1-fittrack/
+├── out/
 ├── src/
 │   ├── Member.java
 │   └── TesFitTrack.java
